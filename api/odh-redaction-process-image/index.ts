@@ -1,7 +1,7 @@
-// ProcessImageUpload/index.js
-const { v4: uuidv4 } = require('uuid');
-const { ApiKeyCredentials } = require('@azure/ms-rest-js');
-const { ComputerVisionClient } = require('@azure/cognitiveservices-computervision');
+import { v4 as uuidv4 } from 'uuid';
+import { ApiKeyCredentials } from '@azure/ms-rest-js';
+import { ComputerVisionClient } from '@azure/cognitiveservices-computervision';
+
 const sleep = require('util').promisify(setTimeout);
 
 const STATUS_SUCCEEDED = "succeeded";

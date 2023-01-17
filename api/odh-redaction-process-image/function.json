@@ -4,7 +4,7 @@
       "name": "myBlob",
       "type": "blobTrigger",
       "direction": "in",
-      "path": "imageanalysis/{name}",
+      "path": "odh-redaction-container/imageanalysis/{name}",
       "connection": "StorageConnection"
     },
     {
@@ -15,5 +15,6 @@
       "direction": "out"
     }
 
-  ]
+  ],
+  "scriptFile": "../dist/odh-redaction-process-image/index.js"
 }

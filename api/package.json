@@ -5,14 +5,16 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "prestart": "npm run build",
+    "prestart": "npm install && npm run build",
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@azure/functions": "^3.0.0",
     "@types/node": "16.x",
-    "typescript": "^4.0.0"
+    "typescript": "^4.0.0",
+    "@azure/cognitiveservices-computervision": "^8.2.0",
+    "@azure/ms-rest-js": "^2.6.1",
+    "uuid": "^8.3.2"
   }
 }
