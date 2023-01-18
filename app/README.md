@@ -44,3 +44,50 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Azure Static Web App
+
+### Local development
+
+1. Install [Azurite](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite?tabs=visual-studio-code)
+
+2. Configure local API emulator
+
+Go to `api` folder and run (for details see post on [SO](https://stackoverflow.com/questions/59385417/the-scriptfile-property-is-set-to-a-file-that-does-not-exist-when-running-azu) )
+
+```bash
+npm install
+npm start
+```
+
+Verify that a new dist folder is created.
+
+3. Start WebApp
+
+Go to `app` folder and run
+```bash
+npm install
+```
+
+Verify that a new node_modules folder is created.
+
+```bash
+npm start
+swa start {RELATIVE_PATH_TO_BUILD_OUTPUT} --api-location {RELATIVE_PATH_TO_API}
+```
+
+or in one line
+
+```bash
+swa start http://localhost:3000 --run "npm start" --api-location {RELATIVE_PATH_TO_API}
+```
+
+Verify that webapp is running on http://localhost:3000 (without API functions).
+
+Verify that api server is running on http://localhost:7071
+
+Verify that function is accessible on http://localhost:7071/api/{FUNCITON_NAME}
+
+Verify that webapp is running on http://localhost:4280 (with API functions).
+
+Verify that function is accessible on http://localhost:4280/api/{FUNCTION_NAME}
